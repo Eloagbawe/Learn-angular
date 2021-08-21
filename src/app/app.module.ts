@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AboutComponent } from './about/about.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { SwiperComponent } from './swiper/swiper.component';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { CarouselComponent } from './carousel/carousel.component';
     AppComponent,
     AboutComponent,
     CarouselComponent,
+    SwiperComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
