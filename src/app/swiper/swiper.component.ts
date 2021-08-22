@@ -35,9 +35,22 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 })
 export class SwiperComponent implements OnInit {
 
+  onSlideChange() {
+    console.log('slide change');
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+// export class SwiperComponent {
+//   onSwiper(swiper) {
+//     console.log(swiper);
+//   }
+//   onSlideChange() {
+//     console.log('slide change');
+//   }
+// }
