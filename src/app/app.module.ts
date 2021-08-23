@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { SwiperComponent } from './swiper/swiper.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { SwiperComponent } from './swiper/swiper.component';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    SwiperModule
+    SwiperModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
