@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Elo Agbawe Idiodi, Welcome to Angular';
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  //images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
 }
