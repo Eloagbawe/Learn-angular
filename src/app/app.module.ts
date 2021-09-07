@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,18 +12,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { AboutComponent } from './about/about.component';
-import { CarouselComponent } from './carousel/carousel.component';
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    CarouselComponent,
+   
     
   ],
   imports: [
@@ -31,7 +24,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     FormsModule,
     NgbModule,
     BrowserAnimationsModule,
-    // CarouselModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
