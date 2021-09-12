@@ -7,4 +7,8 @@
   {{post | json}}
 
 </div>
+
+<button (click)="createPost()">Create Post</button>
+
+{{newPost | async | json}}
 <router-outlet></router-outlet>
