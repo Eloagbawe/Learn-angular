@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import {Post} from './post';
 import { Observable } from 'rxjs';
+//import 'rxjs/add/operator/map';
+import {map} from 'rxjs/operators';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -40,7 +43,11 @@ export class AppComponent {
       body: 'Hello World'
     }
     
-    this.newPost = this.http.post(this.ROOT_URL + '/posts', data);
+    //this.newPost = this.http.post(this.ROOT_URL + '/posts', data);
+
+    this.newPost = this.http.post<Post>(this.ROOT_URL + '/posts', data)
+    
+    .pipe(map((post: { title: any; }) => post.title))
   }
 
 }
