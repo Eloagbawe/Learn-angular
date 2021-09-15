@@ -3,7 +3,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import {Post} from './post';
 import { Observable } from 'rxjs';
 //import 'rxjs/add/operator/map';
-import {map} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {map, catchError, retry} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -45,9 +46,16 @@ export class AppComponent {
     
     //this.newPost = this.http.post(this.ROOT_URL + '/posts', data);
 
-    this.newPost = this.http.post<Post>(this.ROOT_URL + '/posts', data)
+    // this.newPost = this.http.post<Post>(this.ROOT_URL + '/posts', data)
     
-    .pipe(map((post: { title: any; }) => post.title))
+    // .pipe(map((post: { title: any; }) => post.title))
+
+    this.newPost = this.http.post(this.ROOT_URL + '/foo', data)
+    .pipe(retry(3),
+    catchError(err => {
+      console.log(err)
+      throw err
+    }))
   }
 
 }
