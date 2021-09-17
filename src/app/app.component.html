@@ -11,4 +11,13 @@
 <button (click)="createPost()">Create Post</button>
 
 {{newPost | async | json}}
+
+<div *ngIf="test; else elseBlock">
+    <h2>Render this if test is true</h2>
+</div>
+
+<ng-template #elseBlock>
+  <h2>Render this if test is false</h2>
+</ng-template>
+
 <router-outlet></router-outlet>
