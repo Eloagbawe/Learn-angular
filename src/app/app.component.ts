@@ -60,4 +60,26 @@ export class AppComponent {
 
   test = false
 
+  messages = [
+    {
+      heading : 'First Heading',
+      message : 'This is the first heading'
+    },
+
+    {
+      heading : 'Second Heading',
+      message : 'This is the second heading'
+    },
+
+    {
+      heading : 'Third Heading',
+      message : 'This is the third heading'
+    },
+
+    {
+      heading : 'Fourth Heading',
+      message : 'This is the fourth heading'
+    }
+  ]
+
 }

@@ -20,4 +20,9 @@
   <h2>Render this if test is false</h2>
 </ng-template>
 
+<div *ngFor="let message of messages">
+  <h3>{{message.heading}}</h3>
+  <p>{{message.message}}</p>
+</div>
+
 <router-outlet></router-outlet>
