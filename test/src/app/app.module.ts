@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { courseReducer } from './store/reducers/course.reducer';
+import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +26,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     NgbModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      //course: courseReducer,
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
