@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Store } from '@ngrx/store';
 import {Post} from './post';
 import { Observable } from 'rxjs';
+import { CourseItem } from './store/models/courseItem.model';
+import { State } from './store/models/state.model';
 //import 'rxjs/add/operator/map';
 import {of} from 'rxjs';
 import {map, catchError, retry} from 'rxjs/operators';
@@ -83,3 +86,11 @@ export class AppComponent {
   ]
 
 }
+
+// export class AppComponent implements OnInit {
+//   courseItems$: Observable<Array<CourseItem>>;
+//   constructor(private store: Store<State>) {}
+//   ngOnInit(): void {
+//     this.courseItems$ = this.store.select((store) => store.course);
+//   }
+// }
