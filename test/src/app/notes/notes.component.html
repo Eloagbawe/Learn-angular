@@ -6,30 +6,29 @@
                 <h1 class="text-center note-heading">Notes App</h1>
                 <hr/>
             </div>
-        </div>
-        
    
 
-    <div class="row mt-5">
+    <div class="row mt-5 notes-div mx-auto">
 
-        <div class="col-md-6 offset-md-3">
-            <form>
-                <label for="note-title" class="form-label">Title:</label>
-                <input class="form-control mb-4" id="note-title" type="text">
-                <label for="note-input" class="form-label">Note:</label>
-                <textarea class="form-control mb-4" id="note-input" rows="3"></textarea>
+        <div class=" my-3 " *ngFor="let note of notes">
 
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label ms-3" for="flexCheckDefault">
-                  Mark as important
-                </label>
-
-                <button class="submit-btn btn btn-outline-secondary mt-5 px-5" type="submit">Save Note</button>
-
-            </form>
+            <div class="note-title">
+    
+                <h2>{{note.title}}</h2>
+    
+            </div>
+    
+            <div class="note-text">
+    
+                <p>{{note.text}}</p>
+    
+            </div>
+    
         </div>
 
     </div>
+
+</div>
+    
         
-    </div>
-</section>
+</div>

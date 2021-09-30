@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotesComponent } from './notes/notes.component';
 import { TestComponent } from './test/test.component';
+import { AddNoteComponent } from './add-note/add-note.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TestComponent } from './test/test.component';
     AppComponent,
     NotesComponent,
     TestComponent,
+    AddNoteComponent,
    
     
   ],

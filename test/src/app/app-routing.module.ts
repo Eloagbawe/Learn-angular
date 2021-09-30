@@ -3,12 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
+import { AddNoteComponent } from './add-note/add-note.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
     path: 'notes',
     component: NotesComponent
+  },
+
+  {
+    path: 'add-note',
+    component: AddNoteComponent
   },
 
   {

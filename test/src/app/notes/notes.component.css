@@ -2,7 +2,7 @@
     color: #BB8125;
 }
 
-.submit-btn{
-    display: block;
+.notes-div{
+    border : 1px solid grey;
+    width: 50%;
 }
-
