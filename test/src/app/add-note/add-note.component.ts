@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNoteComponent implements OnInit {
 
+  title:string | undefined
+  text:string | undefined
+
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+
+    const newNote = {
+      title: this.title,
+      text: this.text,
+    }
+  
+
+  }
+  
 }
