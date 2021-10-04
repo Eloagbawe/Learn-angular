@@ -9,6 +9,7 @@ export class AddNoteComponent implements OnInit {
 
   title:string | undefined
   text:string | undefined
+  markImportant:boolean | undefined
 
 
 
@@ -22,8 +23,9 @@ export class AddNoteComponent implements OnInit {
     const newNote = {
       title: this.title,
       text: this.text,
+      markImportant: this.markImportant
     }
-  
+   console.log(newNote)
 
   }
   
