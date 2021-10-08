@@ -16,6 +16,9 @@ export class AddNoteComponent implements OnInit {
   text:string | undefined
   markImportant:boolean | undefined
 
+  notes: Observable<any> | undefined;
+  newNote: Observable<any> | undefined;
+
 
 
   constructor(private http : HttpClient) { }
@@ -25,12 +28,13 @@ export class AddNoteComponent implements OnInit {
 
   onSubmit(){
 
-    const newNote = {
+    const data = {
       title: this.title,
       text: this.text,
       markImportant: this.markImportant
     }
-   console.log(newNote)
+   this.newNote = this.http.post(this.ROOT_URL,data)
+  
 
   }
   
