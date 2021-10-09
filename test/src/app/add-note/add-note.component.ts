@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {map, catchError, retry} from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-note',
@@ -10,15 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class AddNoteComponent implements OnInit {
 
-  readonly ROOT_URL = 'http://localhost:3000/notes';
+  private apiUrl = 'http://localhost:3000/notes';
 
   title:string | undefined
   text:string | undefined
-  markImportant:boolean | undefined
 
   notes: Observable<any> | undefined;
   newNote: Observable<any> | undefined;
-
 
 
   constructor(private http : HttpClient) { }
@@ -28,14 +27,25 @@ export class AddNoteComponent implements OnInit {
 
   onSubmit(){
 
-    const data = {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    const data: any = {
       title: this.title,
       text: this.text,
-      markImportant: this.markImportant
+     
     }
-   this.newNote = this.http.post(this.ROOT_URL,data)
+   this.http.post(this.apiUrl, data, httpOptions)
   
-
+      
+   this.title = ""
+   this.text = ""
+    
   }
+
+  
   
 }

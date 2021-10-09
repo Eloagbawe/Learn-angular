@@ -50,11 +50,11 @@ export class TestComponent implements OnInit {
     
     //this.newPost = this.http.post(this.ROOT_URL + '/posts', data);
 
-    // this.newPost = this.http.post<Post>(this.ROOT_URL + '/posts', data)
+    this.newPost = this.http.post<Post>(this.ROOT_URL + '/posts', data)
     
     // .pipe(map((post: { title: any; }) => post.title))
 
-    this.newPost = this.http.post(this.ROOT_URL + '/foo', data)
+    //this.newPost = this.http.post(this.ROOT_URL + '/foo', data)
     .pipe(retry(3),
     catchError(err => {
       console.log(err)
