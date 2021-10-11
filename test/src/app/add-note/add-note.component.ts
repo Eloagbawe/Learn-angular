@@ -4,6 +4,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map, catchError, retry} from 'rxjs/operators';
 import { Note } from '../note'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-note',
@@ -14,23 +15,22 @@ export class AddNoteComponent implements OnInit {
 
   private apiUrl = 'http://localhost:3000/notes';
 
-
-  // title: string | undefined
-  // note: string | undefined
+  title: string | undefined
+  note: string | undefined
 
   notes: Observable<any> | undefined;
   newNote: Observable<any> | undefined;
-  title!: string;
-  note!: string;
   
 
+  constructor(private http : HttpClient, private router : Router) { }
 
-  constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  
+
+  addNote(){
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -38,14 +38,20 @@ export class AddNoteComponent implements OnInit {
       }),
     };
 
-    const data: Note = {
+    const data = {
       title: this.title,
       note: this.note
     }
 
-   this.http.post<Note>(this.apiUrl, data, httpOptions)
+   return this.http.post(this.apiUrl, data, httpOptions)
   
-  
+  }
+
+  onSubmit(){
+     this.addNote().subscribe((note) => {
+       console.log(note)
+       this.router.navigate(["/notes"])
+    })
   }
 
   

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {map, catchError, retry} from 'rxjs/operators';
+import { Note } from '../note'
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
@@ -7,23 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
-  notes = [
-    {title: "Love",
-     text: "Love is a beautiful thing. It is a lovely experience"    
-    },
-    { title: "List of Songs I like",
-    text: "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth"    
-    },
+  private apiUrl = 'http://localhost:3000/notes';
 
-    {title: "Programming Languages",
-    text: "Javascript, Python, C sharp"    
-   },
+  notes: any = [];
 
-  ]
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  getNotes(){
+    //let headers = new HttpHeaders().set('Authorization', 'auth-token');
+    return this.http.get(this.apiUrl)
+  }
 
+  // showNotes(){
+  //   return this.getNotes().subscribe((notes) => (console.log(notes)))
+  // }
+
+  
   ngOnInit(): void {
+    this.getNotes().subscribe((notes) => (this.notes = notes))
+    //this.getNotes().subscribe((notes) => (console.log(notes)))
   }
 
 }

@@ -1,17 +1,34 @@
 {
-    "notes": [
-
-    {"title": "Love",
-     "text": "Love is a beautiful thing. It is a lovely experience"    
+  "notes": [
+    {
+      "id": 1,
+      "title": "Love",
+      "note": "Love is a beautiful thing. It is a lovely experience"
     },
-    
-    { "title": "List of Songs I like",
-    "text": "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth"    
+    {
+      "id": 2,
+      "title": "List of Songs I like",
+      "note": "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth"
     },
-
-    {"title": "Programming Languages",
-    "text": "Javascript, Python, C sharp"    
-   }
-
+    {
+      "id": 3,
+      "title": "Programming Languages",
+      "note": "Javascript, Python, C sharp"
+    },
+    {
+      "id": 4,
+      "title": "new note",
+      "note": "testing"
+    },
+    {
+      "title": "List of Chocolates",
+      "note": "Bounty, Eclairs, Mars",
+      "id": 5
+    },
+    {
+      "title": "Food",
+      "note": "Rice, Beans, Stew",
+      "id": 6
+    }
   ]
 }
