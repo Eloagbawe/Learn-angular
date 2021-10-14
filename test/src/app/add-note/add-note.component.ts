@@ -50,6 +50,8 @@ export class AddNoteComponent implements OnInit {
   onSubmit(){
      this.addNote().subscribe((note) => {
        console.log(note)
+       
+       alert("Note Added Successfully!")
        this.router.navigate(["/notes"])
     })
   }

@@ -24,6 +24,10 @@ export class TestComponent implements OnInit {
   posts: Observable<any> | undefined;
   newPost: Observable<any> | undefined;
 
+  
+
+  
+
   constructor(private http : HttpClient){}
 
   getPosts(){
@@ -86,9 +90,15 @@ export class TestComponent implements OnInit {
     }
   ]
 
+//   checkValue(event){
+//     console.log(event.target.checked)
+//  }
+
   ngOnInit(): void {
+    
   }
 
+ 
 }
 
 

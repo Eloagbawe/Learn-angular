@@ -3,6 +3,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map, catchError, retry} from 'rxjs/operators';
 import { Note } from '../note'
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
@@ -14,16 +16,28 @@ export class NotesComponent implements OnInit {
 
   notes: any = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router : Router) { }
 
   getNotes(){
     //let headers = new HttpHeaders().set('Authorization', 'auth-token');
     return this.http.get(this.apiUrl)
   }
 
-  // showNotes(){
-  //   return this.getNotes().subscribe((notes) => (console.log(notes)))
-  // }
+  delete(note : Note){
+    return this.http.delete(`${this.apiUrl}/${note.id}`)
+  }
+
+  deleteNote(note : Note){
+    this.delete(note).subscribe(() => {
+      this.notes = this.notes.filter((n: Note) => n.id !== note.id)
+
+      
+      alert("Note Successfully Deleted!")
+      this.router.navigate(["/notes"])
+      
+    }
+    )
+  }
 
   
   ngOnInit(): void {
@@ -32,3 +46,7 @@ export class NotesComponent implements OnInit {
   }
 
 }
+function note(note: any) {
+  throw new Error('Function not implemented.');
+}
+
