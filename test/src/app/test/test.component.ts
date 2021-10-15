@@ -24,7 +24,12 @@ export class TestComponent implements OnInit {
   posts: Observable<any> | undefined;
   newPost: Observable<any> | undefined;
 
-  
+  important:boolean = false;
+
+  markImportant(){
+    this.important = !this.important
+    console.log(this.important)
+  }
 
   
 

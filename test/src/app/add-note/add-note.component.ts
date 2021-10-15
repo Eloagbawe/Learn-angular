@@ -20,6 +20,13 @@ export class AddNoteComponent implements OnInit {
 
   notes: Observable<any> | undefined;
   newNote: Observable<any> | undefined;
+
+  important: boolean = false;
+
+  markImportant(){
+    this.important = !this.important
+    return this.important
+  }
   
 
   constructor(private http : HttpClient, private router : Router) { }
@@ -40,7 +47,8 @@ export class AddNoteComponent implements OnInit {
 
     const data = {
       title: this.title,
-      note: this.note
+      note: this.note,
+      important: this.important
     }
 
    return this.http.post(this.apiUrl, data, httpOptions)

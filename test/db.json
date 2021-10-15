@@ -19,6 +19,18 @@
       "title": "Food",
       "note": "Rice, Beans, Stew",
       "id": 6
+    },
+    {
+      "title": "My new Note",
+      "note": "I like to sing",
+      "important": true,
+      "id": 7
+    },
+    {
+      "title": "Newest Note",
+      "note": "I love cooking",
+      "important": false,
+      "id": 8
     }
   ]
 }
