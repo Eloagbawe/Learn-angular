@@ -14,7 +14,7 @@
 
             <div class="note-title mt-3">
     
-                <h2>{{note.title}}</h2>
+                <h2 [ngStyle]="{'font-weight': (note.important === true? '700' : '500')}">{{note.title}}</h2>
     
             </div>
     

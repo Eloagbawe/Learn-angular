@@ -3,21 +3,25 @@
     {
       "id": 2,
       "title": "List of Songs I like",
-      "note": "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth"
+      "note": "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth",
+      "important": false
     },
     {
       "id": 3,
       "title": "Programming Languages",
-      "note": "Javascript, Python, C sharp"
+      "note": "Javascript, Python, C sharp",
+      "important": true
     },
     {
       "title": "List of Chocolates",
       "note": "Bounty, Eclairs, Mars",
-      "id": 5
+      "id": 5,
+      "important": true
     },
     {
       "title": "Food",
       "note": "Rice, Beans, Stew",
+      "important": false,
       "id": 6
     },
     {
