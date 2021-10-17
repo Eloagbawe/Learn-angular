@@ -27,6 +27,13 @@ export class NotesComponent implements OnInit {
     return this.http.delete(`${this.apiUrl}/${note.id}`)
   }
 
+  edit(note : Note){
+    return this.http.put(`${this.apiUrl}/${note.id}`, note )
+  }
+
+  editNote(note : Note){
+    this.edit(note).subscribe()
+  }
   deleteNote(note : Note){
     this.delete(note).subscribe(() => {
       this.notes = this.notes.filter((n: Note) => n.id !== note.id)
