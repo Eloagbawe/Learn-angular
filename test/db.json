@@ -1,40 +1,40 @@
 {
   "notes": [
     {
-      "id": 2,
-      "title": "List of Songs I like",
-      "note": "Umbrella by Rihanna, Sinner by Adekunle Gold, Your body by BasketMouth",
-      "important": false
-    },
-    {
       "id": 3,
       "title": "Programming Languages",
-      "note": "Javascript, Python, C sharp",
-      "important": true
+      "important": false,
+      "note": "Javascript, C sharp, Python, Ruby"
     },
     {
       "title": "List of Chocolates",
-      "note": "Bounty, Eclairs, Mars",
+      "note": "Bounty, Eclairs, Mars, choco-milo",
       "id": 5,
-      "important": true
+      "important": false
     },
     {
-      "title": "Food",
-      "note": "Rice, Beans, Stew",
+      "id": 6,
+      "note": "Rice, Beans, Stew, yam",
       "important": false,
-      "id": 6
+      "title": "My Favorite Foods"
     },
     {
-      "title": "My new Note",
-      "note": "I like to sing",
+      "title": "List of TV shows",
+      "note": "Narcos, Clickbait, Startup",
       "important": true,
-      "id": 7
+      "id": 9
     },
     {
-      "title": "Newest Note",
-      "note": "I love cooking",
+      "title": "What I think about education",
+      "note": "Education is really good",
       "important": false,
-      "id": 8
+      "id": 10
+    },
+    {
+      "title": "Drinks I love",
+      "note": "Maltina, Fayrouz, Fanta",
+      "important": true,
+      "id": 11
     }
   ]
 }

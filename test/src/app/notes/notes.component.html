@@ -6,7 +6,71 @@
                 <h1 class="text-center note-heading">Notes App</h1>
                 <hr/>
             </div>
-   
+
+
+
+
+
+            <div class="modal fade" id="editNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="my-5">
+
+                        <div class="col-md-6 offset-md-3">
+                            <form  (ngSubmit)="editNote()">
+                                <label for="title" class="form-label">Title:</label>
+                                <input class="form-control mb-4"  name="updatedTitle" id="updatedTitle" type="text" value="{{noteToUpdate.title}}" [(ngModel)]="updatedTitle">
+                                <label for="text" class="form-label">Note:</label>
+                                <textarea class="form-control mb-4"  name="updatedNote" id="updatedNote" rows="3" value="{{noteToUpdate.note}}" [(ngModel)]="updatedNote"></textarea>
+                    
+                                <input class="form-check-input"  type="checkbox" value=""  id="flexCheckDefault" #editCheck>
+                                <label class="form-check-label ms-3" for="flexCheckDefault">
+                                  Mark as important
+                                </label>
+                               
+                                <div class="block pb-5 mx-auto">
+                                    <button class="submit-btn btn btn-outline-secondary mt-5 px-3" type="submit" data-bs-dismiss="modal">Save Note</button>
+                                    <button class="btn btn-outline-secondary mt-5 px-3 ms-3" data-bs-dismiss="modal" type="button">Cancel</button>
+                                  </div>
+                            </form>
+                        </div>
+                    
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="my-5">
+
+                        <div class="col-md-6 offset-md-3">
+                            <form  (ngSubmit)="addNote()">
+                                <label for="title" class="form-label">Title:</label>
+                                <input class="form-control mb-4"  name="title" id="title" type="text" value="" [(ngModel)]="title">
+                                <label for="text" class="form-label">Note:</label>
+                                <textarea class="form-control mb-4"  name="note" id="note" rows="3" value="" [(ngModel)]="note"></textarea>
+                    
+                                <input class="form-check-input"  type="checkbox" value=""  id="flexCheckDefault" #addCheck>
+                                <label class="form-check-label ms-3" for="flexCheckDefault">
+                                  Mark as important
+                                </label>
+                               
+                                <div class="block pb-5 mx-auto">
+                                    <button class="submit-btn btn btn-outline-secondary mt-5 px-3" type="submit" data-bs-dismiss="modal">Add New Note</button>
+                                    <button class="btn btn-outline-secondary mt-5 px-3 ms-3" data-bs-dismiss="modal" type="button">Cancel</button>
+                                  </div>
+                            </form>
+                        </div>
+                    
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
 
     <div class="row mt-5 notes-div mx-auto">
 
@@ -18,28 +82,30 @@
     
             </div>
     
-            <div class="note-text">
+            <div class="note-text" >
     
-                <p>{{note.note}}</p>
+                <p [ngStyle]="{'font-weight': (note.important === true? '500' : '400')}">{{note.note}}</p>
 
-                <i class="fa fa-lg fa-pencil-square-o" aria-hidden="true"></i>
+                <i class="fa fa-lg fa-pencil-square-o edit" (click)="triggerEdit(note)" data-bs-toggle="modal" data-bs-target="#editNoteModal"aria-hidden="true"></i>
 
                 <i class="fa fa-lg fa-trash-o ms-3" (click)="deleteNote(note)" aria-hidden="true"></i>
-                
-                
                 
             </div>
 
         </div>
 
         <div>
-            <button class="add-btn btn btn-outline-secondary my-5 px-5" routerLink = "/add-note" type="submit">Add Note</button>
+            <button class="add-btn btn btn-outline-secondary my-5 px-5" data-bs-toggle="modal" data-bs-target="#addNoteModal" type="submit">Add Note</button>
         </div>
 
     </div>
 
 
 </div>
+
+
+
     
         
 </div>
+</section>
