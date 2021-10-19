@@ -3,7 +3,7 @@
     {
       "id": 3,
       "title": "Programming Languages",
-      "important": false,
+      "important": true,
       "note": "Javascript, C sharp, Python, Ruby"
     },
     {
@@ -25,16 +25,16 @@
       "id": 9
     },
     {
-      "title": "What I think about education",
-      "note": "Education is really good",
-      "important": false,
-      "id": 10
-    },
-    {
       "title": "Drinks I love",
       "note": "Maltina, Fayrouz, Fanta",
       "important": true,
       "id": 11
+    },
+    {
+      "title": "My Marriage",
+      "note": "Sometimes my wife too get wahala",
+      "important": true,
+      "id": 12
     }
   ]
 }

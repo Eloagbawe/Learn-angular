@@ -76,21 +76,25 @@
 
         <div class=" my-3 " *ngFor="let note of notes">
 
-            <div class="note-title mt-3">
+            <div   [ngStyle]="{'border-left': (note.important === true? '5px solid #377C7A' : 'none'), 'padding-left':(note.important === true? '1rem' : '0')}">
+                <div class="note-title mt-3">
     
-                <h2 [ngStyle]="{'font-weight': (note.important === true? '700' : '500')}">{{note.title}}</h2>
+                    <h2 [ngStyle]="{'font-weight': (note.important === true? '700' : '500')}">{{note.title}}</h2>
+        
+                </div>
+        
+                <div class="note-text" >
+        
+                    <p [ngStyle]="{'font-weight': (note.important === true? '500' : '400')}">{{note.note}}</p>
     
+                    <i class="fa fa-lg fa-pencil-square-o edit" (click)="triggerEdit(note)" data-bs-toggle="modal" data-bs-target="#editNoteModal"aria-hidden="true"></i>
+    
+                    <i class="fa fa-lg fa-trash-o ms-3" (click)="deleteNote(note)" aria-hidden="true"></i>
+                    
+                </div>
             </div>
-    
-            <div class="note-text" >
-    
-                <p [ngStyle]="{'font-weight': (note.important === true? '500' : '400')}">{{note.note}}</p>
 
-                <i class="fa fa-lg fa-pencil-square-o edit" (click)="triggerEdit(note)" data-bs-toggle="modal" data-bs-target="#editNoteModal"aria-hidden="true"></i>
-
-                <i class="fa fa-lg fa-trash-o ms-3" (click)="deleteNote(note)" aria-hidden="true"></i>
-                
-            </div>
+            
 
         </div>
 

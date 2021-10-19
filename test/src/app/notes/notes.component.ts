@@ -53,20 +53,22 @@ export class NotesComponent implements OnInit {
 
   add(){
 
-    const newNote = {
+      const newNote = {
       title: this.title,
       note: this.note,
       important: this.addCheck.nativeElement.checked
     }
 
-    return this.http.post(this.apiUrl, newNote, this.httpOptions)
+     return this.http.post(this.apiUrl, newNote, this.httpOptions)
   }
 
   addNote(){
     this.add().subscribe((note) => {console.log(note)})
 
-   
-    alert("Note Added Successfully!")
+    this.title = ""
+    this.note = ""
+    this.addCheck.nativeElement.checked = false
+    
     this.getNotes()
     
   }
@@ -123,7 +125,7 @@ export class NotesComponent implements OnInit {
       console.log(note)
     })
    
-    alert("Note Successfully Edited!")
+    
     this.getNotes()
     
   }
@@ -140,8 +142,6 @@ export class NotesComponent implements OnInit {
       this.notes = this.notes.filter((n: Note) => n.id !== note.id)
     
       
-      alert("Note Successfully Deleted!")
-      
     }
     )
   }
@@ -152,8 +152,5 @@ export class NotesComponent implements OnInit {
     //this.getNotes().subscribe((notes) => (console.log(notes)))
   }
 
-}
-function note(note: any) {
-  throw new Error('Function not implemented.');
 }
 
