@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "id": 3,
+      "title": "Programming Languages",
+      "important": true,
+      "note": "Javascript, C sharp, Python, Ruby"
+    },
+    {
+      "title": "List of Chocolates",
+      "note": "Bounty, Eclairs, Mars, choco-milo",
+      "id": 5,
+      "important": true
+    },
+    {
+      "id": 6,
+      "note": "Rice, Beans, Stew, yam",
+      "important": false,
+      "title": "My Favorite Foods"
+    },
+    {
+      "title": "List of TV shows",
+      "note": "Narcos, Clickbait, Startup",
+      "important": true,
+      "id": 9
+    },
+    {
+      "title": "Drinks I love",
+      "note": "Maltina, Fayrouz, Fanta",
+      "important": false,
+      "id": 11
+    }
+  ]
+}

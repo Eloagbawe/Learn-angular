@@ -1,0 +1,33 @@
+<div class="modal fade" id="editNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="my-5">
+
+            <div class="col-md-6 offset-md-3">
+                <form  (ngSubmit)="editNote()">
+
+                    <label for="updatedTitle" class="form-label">Title:</label>
+                    <input class="form-control mb-4"  name="updatedTitle" id="updatedTitle" type="text" value="{{noteToUpdate.title}}" [(ngModel)]="updatedTitle">
+                    <label for="updatedNote" class="form-label">Note:</label>
+                    <textarea class="form-control mb-4"  name="updatedNote" id="updatedNote" rows="3" value="{{noteToUpdate.note}}" [(ngModel)]="updatedNote"></textarea>
+        
+                    <input class="form-check-input"  type="checkbox" value="" id="flexCheckDefault" #editCheck>
+                    <label class="form-check-label ms-3" for="flexCheckDefault">
+                      Mark as important
+                    </label>
+                   
+                    <div class="block pb-5 mx-auto">
+                        <button class="submit-btn btn btn-outline-secondary mt-5 px-3" type="submit" data-bs-dismiss="modal">Save Note</button>
+                        <button class="btn btn-outline-secondary mt-5 px-3 ms-3" data-bs-dismiss="modal" type="button">Cancel</button>
+                      </div>
+                </form>
+            </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+    
+  </div>
+

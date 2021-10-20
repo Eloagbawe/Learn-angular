@@ -1,0 +1,56 @@
+<section>
+    <div class="container">
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h1 class="text-center note-heading">Notes App</h1>
+                <hr/>
+            </div>
+
+
+        <div class="row mt-5 notes-div mx-auto">
+
+        <div class=" my-3 " *ngFor="let note of notes">
+            
+            <div   [ngStyle]="{'border-left': (note.important === true? '5px solid #377C7A' : 'none'), 'padding-left':(note.important === true? '1rem' : '0')}">
+                <div class="note-title mt-3">
+    
+                    <h2 [ngStyle]="{'font-weight': (note.important === true? '700' : '500')}">{{note.title}}</h2>
+        
+                </div>
+        
+                <div class="note-text" >
+        
+                    <p [ngStyle]="{'font-weight': (note.important === true? '500' : '400')}">{{note.note}}</p>
+    
+                    <!-- <i class="fa fa-lg fa-pencil-square-o edit" (click)="triggerEdit(note)" data-bs-toggle="modal" data-bs-target="#editNoteModal"aria-hidden="true"></i> -->
+                    <i class="fa fa-lg fa-pencil-square-o edit" data-bs-toggle="modal" (click)="updateNote(note)" data-bs-target="#editNoteModal"aria-hidden="true"></i>
+                    
+    
+                    <i class="fa fa-lg fa-trash-o ms-3" (click)="deleteNote(note)" aria-hidden="true"></i> 
+                    
+                </div>
+            </div>
+
+            
+
+        </div>
+
+        <div>
+            <button class="add-btn btn btn-outline-secondary my-5 px-5" data-bs-toggle="modal" data-bs-target="#addNoteModal" type="submit">Add Note</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+<app-add-note (AddNote) = "addNote($event)"></app-add-note>
+<app-edit-note [noteToUpdate] = "noteToUpdate" (EditNote) = "editNote($event)"></app-edit-note>
+
+
+
+    
+        
+</div>
+</section>
