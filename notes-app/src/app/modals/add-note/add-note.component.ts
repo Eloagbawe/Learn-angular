@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, Output, EventEmitter} from '@
 import { Router } from '@angular/router'
 
 
-import { Note } from '../../note'
+import { Note } from '../../Note'
 import {  NoteService } from '../../services/note.service'
 
 @Component({

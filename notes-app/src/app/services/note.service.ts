@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-import { Note } from '../note'
+import { Note } from '../Note'
 
 @Injectable({
   providedIn: 'root'

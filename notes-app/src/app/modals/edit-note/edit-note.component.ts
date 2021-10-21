@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { NoteService } from 'src/app/services/note.service';
 
-import { Note } from '../../note'
+import { Note } from '../../Note'
 @Component({
   selector: 'app-edit-note',
   templateUrl: './edit-note.component.html',
@@ -20,7 +20,6 @@ export class EditNoteComponent implements OnInit {
 
    @Output() EditNote : EventEmitter<Note> = new EventEmitter
 
-  importance:boolean = true
   
   updatedTitle!: string;
   updatedNote!: string;
@@ -29,13 +28,10 @@ export class EditNoteComponent implements OnInit {
   editCheck!: ElementRef;
 
 
- 
 
   constructor(private noteService: NoteService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   
   editNote(){
@@ -53,7 +49,7 @@ export class EditNoteComponent implements OnInit {
 
     //  this.updatedTitle = ""
     //  this.updatedNote = ""
-    //  this.editCheck.nativeElement.checked = false;
+     this.editCheck.nativeElement.checked = false;
     //  console.log(updatedNote)
   }
 }
