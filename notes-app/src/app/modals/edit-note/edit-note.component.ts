@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter, AfterViewInit, AfterContentInit } from '@angular/core';
 import { NoteService } from 'src/app/services/note.service';
 
 import { Note } from '../../Note'
@@ -7,7 +7,7 @@ import { Note } from '../../Note'
   templateUrl: './edit-note.component.html',
   styleUrls: ['./edit-note.component.scss']
 })
-export class EditNoteComponent implements OnInit {
+export class EditNoteComponent implements OnInit , AfterViewInit {
 
    @Input() noteToUpdate: Note = {
      title: "",
@@ -30,10 +30,15 @@ export class EditNoteComponent implements OnInit {
 
 
   constructor(private noteService: NoteService) {}
+  
+
+  ngAfterViewInit(): void {
+    // throw new Error('Method not implemented.');
+    this.editCheck.nativeElement.checked = this.noteToUpdate.important;
+  }
 
   ngOnInit(): void { }
 
-  
   editNote(){
   
      const updatedNote = {

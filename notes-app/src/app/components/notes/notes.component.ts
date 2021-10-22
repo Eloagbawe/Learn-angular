@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {NoteService} from '../../services/note.service'
-import {Note} from '../../note'
+import {Note} from '../../Note'
 
 @Component({
   selector: 'app-notes',
@@ -26,6 +26,8 @@ export class NotesComponent implements OnInit {
      this.noteToUpdate.important = note.important
   }
   
+  
+
 
   constructor(private noteService : NoteService) { }
 
