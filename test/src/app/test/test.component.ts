@@ -100,7 +100,10 @@ export class TestComponent implements OnInit {
 //  }
 
   ngOnInit(): void {
+
+    const el = <HTMLElement>document.getElementById("new-heading")
     
+    el.innerHTML="Testing if the id selector is working"
   }
 
  

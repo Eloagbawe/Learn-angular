@@ -28,12 +28,11 @@ export class EditNoteComponent implements OnInit , AfterViewInit {
   editCheck!: ElementRef;
 
 
-
   constructor(private noteService: NoteService) {}
   
 
   ngAfterViewInit(): void {
-    // throw new Error('Method not implemented.');
+    
     this.editCheck.nativeElement.checked = this.noteToUpdate.important;
   }
 
@@ -51,9 +50,6 @@ export class EditNoteComponent implements OnInit , AfterViewInit {
 
      this.EditNote.emit(updatedNote)
 
-
-    //  this.updatedTitle = ""
-    //  this.updatedNote = ""
      this.editCheck.nativeElement.checked = false;
     //  console.log(updatedNote)
   }
