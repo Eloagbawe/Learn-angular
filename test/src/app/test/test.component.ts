@@ -108,18 +108,3 @@ export class TestComponent implements OnInit {
 
  
 }
-
-
-  //constructor() { }
-
- 
-
-//   export class AppComponent implements OnInit {
-//       courseItems$: Observable<Array<CourseItem>>;
-//       constructor(private store: Store<State>) {}
-//       ngOnInit(): void {
-//         this.courseItems$ = this.store.select((store) => store.course);
-//       }
-//     }
-    
-// }
