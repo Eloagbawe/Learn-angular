@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { galleryReducer } from './store/gallery.reducer';
-import { photoReducer } from './store/photo.reducer';
+import { counterReducer } from './store/counter.reducer';
 import { GalleryService } from './components/gallery/gallery.service';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryEffect } from './components/gallery/gallery.effect';
@@ -23,14 +23,15 @@ import { GalleryEffect } from './components/gallery/gallery.effect';
 @NgModule({
   declarations: [
     AppComponent,
-    GalleryComponent
+    GalleryComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({ gallery: galleryReducer, photo: photoReducer }),
+    StoreModule.forRoot({ gallery: galleryReducer, counter: counterReducer}),
     EffectsModule.forRoot([GalleryEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
