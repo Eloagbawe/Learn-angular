@@ -16,6 +16,7 @@ import { counterReducer } from './store/counter.reducer';
 import { GalleryService } from './components/gallery/gallery.service';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryEffect } from './components/gallery/gallery.effect';
+import { CounterComponent } from './components/counter/counter.component';
 
 
 
@@ -24,6 +25,7 @@ import { GalleryEffect } from './components/gallery/gallery.effect';
   declarations: [
     AppComponent,
     GalleryComponent,
+    CounterComponent,
    
   ],
   imports: [
