@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { Counter } from 'src/app/store/counter.state';
 import { increment, decrement, reset } from '../../store/counter.action';
 
 
@@ -9,22 +10,29 @@ import { increment, decrement, reset } from '../../store/counter.action';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent implements OnInit, OnDestroy {
  
-  //counter$!: Observable<number>;
+  //counter$!: Observable<Counter>;
   //counter: number = 4;
 
   counter$!: number;
-  constructor(private store: Store<{counter: {counter: number}}>) { 
-
+  counterSubscription!: Subscription
+  constructor(private store: Store<{counter: Counter}>) { 
+    this.counterSubscription = 
     this.store.select('counter').subscribe((data) => {
       this.counter$ = data.counter
     })
+    
   }
 
   ngOnInit(): void {
   }
 
+  ngOnDestroy(){
+    if (this.counterSubscription){
+      this.counterSubscription.unsubscribe();
+    }
+  }
   increment(){
      this.store.dispatch(increment())
   }
