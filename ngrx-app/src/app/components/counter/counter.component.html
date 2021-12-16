@@ -1,13 +1,18 @@
 <div class="container">
    <div class="row text-center">
        <div class="col-md-12 my-3">
-          <h4>The counter is {{counter$}}</h4>
+          <h4>The counter is {{(counter$ | async)!.counter}}</h4>
        </div>
 
-       <div class="col-md-12">
+       <div class="col-md-12 my-3">
            <button class="btn btn-outline-primary me-3" (click)="increment()">Increase</button>
            <button class="btn btn-outline-danger me-3" (click)="decrement()">Decrease</button>
            <button class="btn btn-outline-info" (click)="reset()">Reset</button>
+       </div>
+
+       <div class="col-md-12 my-3">
+           <input type="text" class="me-3 p-1" placeholder="Enter Value" [(ngModel)] = "value">
+           <button class="btn btn-outline-secondary" (click) = "onAdd()">Add to Counter</button>
        </div>
    </div>
 </div>
