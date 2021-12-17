@@ -14,6 +14,7 @@ export class CounterComponent implements OnInit{
  
   value!: number;
   counter$!: Observable<Counter>;
+  topic!: string;
   
   counterSubscription!: Subscription
   constructor(private store: Store<{counter: Counter}>) { 
@@ -21,6 +22,10 @@ export class CounterComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
+    this.store.select('counter').subscribe((data)=>{
+      this.topic = data.topic
+    })
   }
 
   increment(){
