@@ -6,3 +6,7 @@ export const reset = createAction('[Counter Component] Reset');
 export const customIncrement = createAction(
     '[Counter Component] CustomIncrement', 
     props<{value: number}>())
+export const changeTopic = createAction(
+    '[Counter Component] Change Topic',
+    props<{topic: string}>()
+)
