@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+import { getCounter, getTopic } from 'src/app/store/counter.selector';
 import { Counter } from 'src/app/store/counter.state';
 import { increment, decrement, reset, customIncrement, changeTopic } from '../../store/counter.action';
 
@@ -13,19 +14,16 @@ import { increment, decrement, reset, customIncrement, changeTopic } from '../..
 export class CounterComponent implements OnInit{
  
   value!: number;
-  counter$!: Observable<Counter>;
-  topic!: string;
+  counter$!: Observable<number>;
+  topic$!: Observable<string>;
   topicInput!:string;
   counterSubscription!: Subscription
   constructor(private store: Store<{counter: Counter}>) { 
-    this.counter$ = this.store.select('counter')
+    this.counter$ = this.store.select(getCounter)
   }
 
   ngOnInit(): void {
-
-    this.store.select('counter').subscribe((data)=>{
-      this.topic = data.topic
-    })
+    this.topic$ = this.store.select(getTopic)
   }
 
   increment(){
@@ -47,5 +45,6 @@ export class CounterComponent implements OnInit{
 
   changeTopic(){
     this.store.dispatch(changeTopic({topic: this.topicInput}))
+    this.topicInput = ""
   }
 }

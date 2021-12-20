@@ -2,10 +2,10 @@
    <div class="row text-center">
 
     <div class="col-md-12 my-3">
-        <h1>{{topic}}</h1>
+        <h1>{{topic$ | async}}</h1>
     </div>
        <div class="col-md-12 my-3">
-          <h4>The counter is {{(counter$ | async)!.counter}}</h4>
+          <h4>The counter is {{(counter$ | async)}}</h4>
        </div>
 
        <div class="col-md-12 my-3">
