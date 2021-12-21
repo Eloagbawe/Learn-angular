@@ -6,7 +6,7 @@
         [ngModel]="selectedAlbumId"
         (ngModelChange)="albumChange($event)"
       >
-        <option value="-1">Select Gallery Categroy</option>
+        <option value="-1">Select Gallery Category</option>
   
         <option *ngFor="let id of albumIds$ | async" [value]="id">
           {{ id }}
@@ -18,7 +18,7 @@
         <img src="{{item.thumbnailUrl}}" class="card-img-top" alt="..." style="height: 150px;">
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
-          <div>Album Categroy Id {{item.albumId}}</div>
+          <div>Album Category Id {{item.albumId}}</div>
         </div>
       </div>
     </div>
