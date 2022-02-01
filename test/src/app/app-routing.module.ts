@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { TestComponent } from './test/test.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'test',
     component: TestComponent
+  },
+  {
+    path: 'pagination',
+    component: PaginationComponent
   }
  ];
 

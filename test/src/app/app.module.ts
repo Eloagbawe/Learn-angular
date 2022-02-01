@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotesComponent } from './notes/notes.component';
 import { TestComponent } from './test/test.component';
 import { AddNoteComponent } from './add-note/add-note.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { AddNoteComponent } from './add-note/add-note.component';
     NotesComponent,
     TestComponent,
     AddNoteComponent,
+    PaginationComponent,
    
     
   ],
@@ -31,6 +34,7 @@ import { AddNoteComponent } from './add-note/add-note.component';
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    NgxPaginationModule,
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot({
