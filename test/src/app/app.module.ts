@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +20,7 @@ import { TestComponent } from './test/test.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
+const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     NgxPaginationModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    SocketIoModule.forRoot(config),
     StoreModule.forRoot({
       //course: courseReducer,
     }),
