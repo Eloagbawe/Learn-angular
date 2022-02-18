@@ -9,6 +9,8 @@ import { State } from '../store/models/state.model';
 //import 'rxjs/add/operator/map';
 import {of} from 'rxjs';
 import {map, catchError, retry} from 'rxjs/operators';
+import { Socket } from 'ng-socket-io';
+
 
 @Component({
   selector: 'app-test',
@@ -31,9 +33,13 @@ export class TestComponent implements OnInit {
     console.log(this.important)
   }
 
+  sendMessage(msg: string){
+    this.socket.emit("message", msg);
+}
+
   
 
-  constructor(private http : HttpClient){}
+  constructor(private http : HttpClient, private socket: Socket){}
 
   getPosts(){
     //this.posts = this.http.get<Post[]>(this.ROOT_URL + '/posts');
