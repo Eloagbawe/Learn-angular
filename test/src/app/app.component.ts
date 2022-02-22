@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { Socket } from 'ng-socket-io';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Elo Agbawe Idiodi, Welcome to Angular';
+
+  //constructor(private socket: Socket){}
+
+
+//   sendMessage(msg: string){
+//     this.socket.emit("message", msg);
+// }
 }

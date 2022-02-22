@@ -9,7 +9,7 @@ import { State } from '../store/models/state.model';
 //import 'rxjs/add/operator/map';
 import {of} from 'rxjs';
 import {map, catchError, retry} from 'rxjs/operators';
-import { Socket } from 'ng-socket-io';
+// import { Socket } from 'ng-socket-io';
 
 
 @Component({
@@ -33,13 +33,13 @@ export class TestComponent implements OnInit {
     console.log(this.important)
   }
 
-  sendMessage(msg: string){
-    this.socket.emit("message", msg);
-}
+//   sendMessage(msg: string){
+//     this.socket.emit("message", msg);
+// }
 
   
 
-  constructor(private http : HttpClient, private socket: Socket){}
+  constructor(private http : HttpClient){}
 
   getPosts(){
     //this.posts = this.http.get<Post[]>(this.ROOT_URL + '/posts');
