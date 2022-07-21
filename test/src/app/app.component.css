@@ -5,3 +5,11 @@
   font-size: 250%;
 } */
 
+.test{
+  border: 1px solid black;
+  width: 30%;
+}
+
+.title{
+  color: steelblue;
+}

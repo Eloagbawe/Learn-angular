@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotesComponent } from './notes/notes.component';
 import { TestComponent } from './test/test.component';
 import { AddNoteComponent } from './add-note/add-note.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { TestPaginationComponent } from './test-pagination/test-pagination.component';
 
 // const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
@@ -28,7 +28,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     NotesComponent,
     TestComponent,
     AddNoteComponent,
-    PaginationComponent,
+    TestPaginationComponent,
    
     
   ],
